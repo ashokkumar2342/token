@@ -67,7 +67,8 @@ class MasterController extends Controller
     public function VisitorDetails()
     { 
         try {   
-            return view('admin.master.visitorDetails.index');
+          $VisitorDetails =VisitorDetails::get();
+            return view('admin.master.visitorDetails.index',compact('VisitorDetails'));
         } catch (Exception $e) {
 
         }
@@ -118,10 +119,9 @@ class MasterController extends Controller
     {  return $request;
       try {  
         $rules=[
-            'name' => 'required', 
-            'address' => 'required', 
-            'mobile_no' => 'required', 
-            'total_person' => 'required', 
+            'for' => 'required', 
+            'from_time' => 'required', 
+            'to_time' => 'required',  
         ];
 
         $validator = Validator::make($request->all(),$rules);
@@ -133,10 +133,10 @@ class MasterController extends Controller
         return response()->json($response);// response as json
        }
        else {
-       $VisitorDetails=Batche::firstOrNew(['id'=>$id]);
+       $VisitorDetails=new Batche();
        $VisitorDetails->batch_no=$request->batch_no;
        $VisitorDetails->for_date=$request->for_date;
-       $VisitorDetails->for_time=$request->for_time; 
+       $VisitorDetails->for_time=$request->form_time; 
        $VisitorDetails->total_person=$request->total_person; 
        $VisitorDetails->batch_strength=$request->batch_strength; 
        $VisitorDetails->save();

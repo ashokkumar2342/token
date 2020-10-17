@@ -18,40 +18,39 @@
                         <div class="card card-primary"> 
                             <form action="{{ route('admin.Master.BatchesStore') }}" method="post" class="add_form">
                                 {{ csrf_field() }}
-                                <div class="card-body row"> 
-                                    <div class="col-lg-4 form-group">
-                                        <label for="exampleInputEmail1">Batch No.</label>
-                                        <span class="fa fa-asterisk"></span>
-                                        <input type="text" name="batch_no" id="code" class="form-control" placeholder="Enter Batch No." maxlength="100">
-                                    </div>
-                                    <div class="col-lg-4 form-group">
+                                <div class="card-body row">  
+                                    <div class="col-lg-2 form-group">
                                         <label for="exampleInputPassword1">For Date</label>
                                         <span class="fa fa-asterisk"></span>
                                         <input type="date" name="for_date" id="" class="form-control">
                                     </div>
-                                    <div class="col-lg-4 form-group">
+                                    <div class="col-lg-2 form-group">
                                         <label for="exampleInputPassword1">from Time</label>
                                         <span class="fa fa-asterisk"></span>
                                         <input type="text" name="form_time" id="" class="form-control" maxlength="4">
                                     </div>
-                                    <div class="col-lg-4 form-group">
-                                        <label for="exampleInputPassword1">TO Time</label>
+                                    <div class="col-lg-2 form-group">
+                                        <label for="exampleInputPassword1">To Time</label>
                                         <span class="fa fa-asterisk"></span>
                                         <input type="text" name="to_time" id="" class="form-control" maxlength="4">
                                     </div>
-                                    <div class="col-lg-6 form-group">
+                                    <div class="col-lg-2 form-group">
                                         <label for="exampleInputPassword1">Total Person</label>
                                         <span class="fa fa-asterisk"></span>
                                         <input type="text" name="total_person" id="" class="form-control" maxlength="4">
                                     </div>
-                                    <div class="col-lg-6 form-group">
+                                    <div class="col-lg-2 form-group">
                                         <label for="exampleInputPassword1">Batch Strength</label>
                                         <span class="fa fa-asterisk"></span>
                                         <input type="text" name="batch_strength" id="" class="form-control" maxlength="4">
+                                    </div>
+                                    <div class="col-lg-2 form-group">
+                                         <br>
+                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div> 
                                 </div> 
                                 <div class="card-footer text-center">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                   
                                 </div>
                             </form>
                         </div> 
@@ -61,10 +60,12 @@
                              <table id="district_datatable" class="table table-striped table-hover control-label">
                                  <thead>
                                      <tr>
-                                         <th>Name</th>
-                                         <th>Address</th>
-                                         <th>Mobile No.</th>
+                                         
+                                         <th>For Date</th>
+                                         <th>Batch No</th>
                                          <th>Total Person</th> 
+                                         <th>Total Strength</th>
+                                         
                                      </tr>
                                  </thead>
                                  <tbody>
